@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チームビンゴ作成</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>スマブラ チームビンゴ</h1>
+    <form id="bingoTypeSelector">
+        <label>
+            <input type="radio" name="miiOption" value="86" checked onchange="setMaxImageNumber(this.value)"> Miiあり
+        </label>
+        <label>
+            <input type="radio" name="miiOption" value="83" onchange="setMaxImageNumber(this.value)"> Miiなし
+        </label>
+    </form>
+    <div id="player-container"></div>
+    <button type="button" id="addPlayerButton">参加者を追加する</button>
+    <button type="button" id="createBingoButton">ビンゴを作成する</button>
+    <script>
+        var selectedMaxImageNumber = 86; // デフォルト値
+
+        function setMaxImageNumber(value) {
+            selectedMaxImageNumber = parseInt(value);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

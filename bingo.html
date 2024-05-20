@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビンゴページ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>スマブラ チームビンゴ</h1>
+    <div class="bingo-wrapper">
+        <div class="team-and-bingo">
+            <div id="left-team" class="team-info"></div>
+            <div id="bingo-container-left" class="bingo-container"></div>
+        </div>
+        <div class="radio-wrapper">
+            <label>
+                <input type="radio" name="victory" value="1P" onclick="updateColorsBasedOnVictory('1P')"> 左チーム勝利
+            </label>
+            <label>
+                <input type="radio" name="victory" value="3P" onclick="updateColorsBasedOnVictory('3P')"> 右チーム勝利
+            </label>
+        </div>
+        <div class="team-and-bingo">
+            <div id="right-team" class="team-info"></div>
+            <div id="bingo-container-right" class="bingo-container"></div>
+        </div>
+    </div>
+    <button id="createBingoButton" type="button">ビンゴを作成する</button>
+    <div class="button-container">
+        <button type="button" id="backButton" onclick="location.href='index.html'">トップページに戻る</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

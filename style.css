@@ -1,0 +1,134 @@
+/*蟷螂作*/
+/* ボタンのスタイリング */
+button {
+    padding: 20px 30px; /* パディングでボタンの大きさを調整 */
+    font-size: 1.5em; /* フォントサイズを大きくしてボタンのテキストを目立たせる */
+    margin: 40px auto 80px; /* 上に40px、下に80pxのマージンを設ける */
+    display: block; /* ブロック要素として扱うことでwidthが有効になる */
+    width: 20%; /* ボタンの幅 */
+    cursor: pointer; /* カーソルをポインタに変更 */
+    background-color: #f10b1b; /* 背景色 */
+    color: white; /* テキスト色 */
+    border: none; /* ボーダーなし */
+    border-radius: 10px; /* 角を丸める */
+    transition: background-color 0.3s; /* 色の変化にアニメーションを設定 */
+}
+
+/* ボタンコンテナのスタイリング */
+.button-container {
+    position: absolute; /* 絶対位置指定 */
+    top: 1px; /* 上から1pxの位置に */
+    left: 25%; /* 左側から画面の25%の位置に */
+    transform: translateX(-50%); /* 左に50%移動して中央揃えに */
+    width: 100%; /* コンテナの幅を100%に */
+    display: flex; /* フレックスボックス */
+    justify-content: space-between; /* ボタン間のスペースを均等に分配 */
+}
+
+/* トップページに戻るボタンの特定のスタイル */
+#backButton {
+    padding: 17px 23px; /* 少し小さめのパディング */
+    font-size: 1em; /* フォントサイズを小さく */
+    margin: 20px auto; /* マージンを少し減らす */
+    width: auto; /* 幅をコンテンツに応じて自動調整にする */
+    background-color: #293ce3; /* 緑色の背景 */
+    color: white; /* テキスト色は白のまま */
+    border-radius: 5px; /* 角の丸みを少し小さく */
+    /* その他のスタイル */
+}
+
+button:hover {
+    background-color: #c00; /* ボタンにマウスオーバーしたときの背景色を暗くする */
+}
+
+/* ビンゴコンテナのスタイリング */
+.bingo-container {
+    max-width: 500px; /* コンテナの最大幅 */
+    margin: 0 auto; /* 上下のマージンを自動で設定して中央揃え */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5列 */
+    grid-template-rows: repeat(5, 1fr); /* 5行、これがないと行の高さが不揃いになる可能性があります */
+    gap: 0; /* セル間のギャップを無くす */
+}
+
+.bingo-cell {
+    border: 1px solid #000; /* オセロのようなあみあみの枠 */
+    width: 100px; /* セルの幅を指定 */
+    height: 100px; /* セルの高さを指定 */
+    cursor: pointer; /* クリック可能なことを示すカーソル */
+    position: relative; /* 背景色用の疑似要素を配置するために必要 */
+    display: flex; /* 画像を中央に配置するためのフレックスボックス */
+    justify-content: center; /* 中央揃え（水平方向） */
+    align-items: center; /* 中央揃え（垂直方向） */
+    background-color: transparent; /* 最初は透明 */
+    margin: 0px; /* 枠線を重ねるためにマージンを負の値に設定 */
+}
+
+.bingo-cell img {
+    z-index: 1; /* 色よりも前面に来るようにz-indexを設定 */
+    width: auto;  /* 幅は自動調整にして、画像の元のアスペクト比を保つ */
+    height: 80%; /* 高さはセルの80%にする */
+    object-fit: contain; /* 画像全体がセルに収まるように調整 */
+}
+
+/* クリックによってセルの背景色を変更するためのクラス */
+.bingo-cell.red {
+    background-color: rgb(255, 0, 0); /* 完全に不透明な赤色 */
+}
+
+.bingo-cell.blue {
+    background-color: rgb(0, 0, 255); /* 完全に不透明な青色 */
+}
+
+.bingo-cell.gray {
+    background-color: gray;
+}
+
+/* グリッドコンテナのスタイリング */
+#bingo-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5列 */
+    gap: 0; /* セル間のギャップを無くす */
+}
+
+/*ビンゴを横に並べるやつ*/
+.bingo-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* ページ全体の中央揃え */
+body {
+    text-align: center; /* 中央揃え */
+}
+
+/* ラジオボタンのカスタマイズ */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+#bingoTypeSelector {
+    margin-bottom: 20px;
+}
+
+/* ビンゴカードの間に配置するラジオボタンのスタイル */
+.radio-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.radio-wrapper label {
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1.2em;
+}
